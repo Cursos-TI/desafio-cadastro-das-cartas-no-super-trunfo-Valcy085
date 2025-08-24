@@ -10,6 +10,8 @@ int main() {
         float area;
         float pib;
         int ponto_turistico;
+        float dencidade; // Novo campo: Dencidade populacional
+        float pib_per_capita; // Novo campo: PIB per capita
     };
     
     // Declarando as cartas
@@ -39,6 +41,10 @@ int main() {
     printf("Pontos Turisticos: ");
     scanf("%d", &carta1.ponto_turistico);
 
+    // Calcular a Dencidade populacional e PIB per capita para a primeira carta
+    carta1.dencidade = carta1.populacao / carta1.area;
+    carta1.pib_per_capita = carta1.pib / carta1.populacao;
+
     // Cadastrar a segunda carta
     printf("\nCADASTRO DA SEGUNDA CARTA\n");
     printf("Estado (A-H): ");
@@ -62,6 +68,10 @@ int main() {
     printf("Pontos Turisticos: ");
     scanf("%d", &carta2.ponto_turistico);
 
+    // Calcular a Dencidade populacional PIB per capita da segunda carta
+    carta2.dencidade = carta2.populacao / carta2.area; // Cálculo da Dencidade populacional
+    carta2.pib_per_capita = carta2.pib / carta2.populacao; // Cálculo  do PIB per capita
+
     // Mostrar as cartas cadastradas
     printf("\n=== CARTAS CADASTRADAS ===\n");
 
@@ -74,6 +84,8 @@ int main() {
     printf("Area: %.2f km²\n", carta1.area);
     printf("PIB: %.2f\n", carta1.pib);
     printf("Pontos Turisticos: %d\n", carta1.ponto_turistico);
+    printf("Dencidade Populacional: %.2f hab/Km²\n", carta1.dencidade); // Exibir o nono campo
+    printf("PIB Per capita: %.2f\n", carta1.pib_per_capita); // Exibir o novo campo
 
     // Exibição dos dados da Carta 2
     printf("\nCARTA 2:\n");
@@ -84,6 +96,8 @@ int main() {
     printf("Area: %.2f km²\n", carta2.area);
     printf("PIB: %.2f\n", carta2.pib);
     printf("Pontos Turisticos: %d\n", carta2.ponto_turistico);
+    printf("Dencidade Populacional: %.2f hab/Km²\n", carta2.dencidade); // Exibir o novo campo
+    printf("PIB Per capita: %.2f\n", carta2.pib_per_capita); // Exibir o novo campo
 
     return 0;
 }
